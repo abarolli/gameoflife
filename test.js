@@ -62,16 +62,14 @@ let renderAutomaton = element => {
 let cells = document.querySelectorAll(".cell");
 let isAutomatonReady = false;
 cells.forEach( cell => {
-	
-	/*
-	SETTING EVENT LISTENERS FOR CELLS
-	*/
-	cell.addEventListener("click", e => {
+
+	cell.addEventListener("mousedown", e => {
+        e.preventDefault();
 		renderAutomaton(cell);
 		if (cell.classList.contains("automatonHighlighted")) {
 			cell.classList.remove("automatonHighlighted");
 		}
-		isAutomatonReady = !isAutomatonReady;
+		isAutomatonReady = true;
 	});
 
 	cell.addEventListener("mouseenter", e => {
@@ -88,6 +86,10 @@ cells.forEach( cell => {
 			e.target.classList.remove("automatonHighlighted");
 		}
 	})
+});
+
+document.body.addEventListener("mouseup", e => {
+    isAutomatonReady = false;
 });
 
 
