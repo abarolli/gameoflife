@@ -113,3 +113,22 @@ p.rule {
 	right: 10%;
 	top: 32px;
 }
+
+#power {
+	margin-top: 165px;
+	margin-right: 10px;
+}
+
+#power {
+	appearance: none;
+	background-color: white;
+	width: 15px;
+	height: 15px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+}
+
+#power:checked {
+	background-color: rgb(200, 0, 0);
+	box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+}

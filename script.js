@@ -215,15 +215,22 @@ startBtn.addEventListener("mousedown", e => {
 	buttonDown(e.target);
 });
 
+let powerIcon = document.querySelector("input[type='checkbox']");
+powerIcon.onclick = e => e.preventDefault();
+
 startBtn.addEventListener("mouseup", e => {
 	e.preventDefault();
-	startInterval = beginAutomaton(automatonCoords);
-	buttonUp(e.target);
+    if (powerIcon.checked != true) {
+        startInterval = beginAutomaton(automatonCoords);
+        powerIcon.checked = true;
+    }
+    buttonUp(e.target);
 })
 
 let stopBtn = document.querySelector(".stopAutomaton");
 stopBtn.addEventListener("click", e => {
 	clearInterval(startInterval);
+    powerIcon.checked = false;
 });
 
 let resetBtn = document.querySelector(".resetGrid");
@@ -235,3 +242,5 @@ resetBtn.addEventListener("click", e => {
 	automatonCoords.clear();
 	potentialNext.clear();
 });
+
+
