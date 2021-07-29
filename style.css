@@ -11,6 +11,8 @@ body {
 	height: 100%;
 	position: relative;
 	background-color: whitesmoke;
+	min-width: 950px;
+	overflow-x: hidden;
 }
 
 nav {
@@ -22,7 +24,7 @@ nav {
 table {
 	border-collapse: collapse;
 	position: absolute;
-	top: 200px;
+	top: 250px;
 	left: 200px;
 }
 
@@ -56,7 +58,7 @@ main {
 
 .resetGrid {
 	position: absolute;
-	bottom: 100px;
+	bottom: 50px;
 	right: 200px;
 }
 
@@ -89,6 +91,10 @@ td {
 
 .rule {
 	padding-top: 5px;
+}
+
+.ps {
+	font-size: 12px;
 }
 
 p.rule {
